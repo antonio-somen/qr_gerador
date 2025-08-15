@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Gerador de QR Codes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Gerador de QR Codes</h1>
+    <div class="opcoes">
+      <button class="opcao active" data-tipo="wifi"><span>📶</span> Wi-Fi</button>
+      <button class="opcao" data-tipo="whatsapp"><span>💬</span> WhatsApp</button>
+      <button class="opcao" data-tipo="link"><span>🔗</span> Link</button>
+      <button class="opcao" data-tipo="livre"><span>✏️</span> Livre</button>
+    </div>
+    <form id="formulario" autocomplete="off">
+      <div class="icone-titulo">
+        <div id="icone-form">📶</div>
+        <div>
+          <input type="text" id="titulo" placeholder="Título (opcional)" maxlength="40">
+        </div>
+      </div>
+      <div id="campos-dinamicos"></div>
+      <div>
+        <input type="text" id="descricao" placeholder="Descrição (opcional)" maxlength="80">
+      </div>
+      <button type="submit" id="gerar">Gerar QR Code</button>
+    </form>
+    <section id="resultado" style="display:none;">
+      <div id="visual"></div>
+      <div class="botoes-result">
+        <button id="download-png">Download PNG</button>
+        <button id="download-pdf">Download PDF</button>
+        <button id="compartilhar" style="display:none;">Compartilhar</button>
+      </div>
+    </section>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
